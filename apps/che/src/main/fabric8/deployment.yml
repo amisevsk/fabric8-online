@@ -60,6 +60,16 @@ spec:
             configMapKeyRef:
               key: "remote-debugging-enabled"
               name: "che"
+        - name: "JAVA_OPTS"
+          value: "-Xms256M -Xmx256M"
+        - name: "CHE_WORKSPACE_JAVA_OPTIONS"
+          value: "-Xms256m -Xmx512M -Djava.security.egd=file:/dev/./urandom"
+        - name: "CHE_WORKSPACE_MAVEN_OPTIONS"
+          value: "-Xms256m -Xmx512M -Djava.security.egd=file:/dev/./urandom"
+        - name: "CHE_WORKSPACE_AGENT_DEV_MAX__START__TIME__MS"
+          value: "360000"
+        - name: "CHE_WORKSPACE_DEFAULT__MEMORY__MB"
+          value: "512"
         image: "rhche/che-server:cda3edc"
         imagePullPolicy: "IfNotPresent"
         name: che
