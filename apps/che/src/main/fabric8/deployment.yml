@@ -126,8 +126,13 @@ spec:
         volumeMounts:
         - mountPath: "/data"
           name: "che-data-volume"
+        - mountPath: "/projects"
+          name: "claim-che-workspace"
       serviceAccountName: "che"
       volumes:
       - name: che-data-volume
         persistentVolumeClaim:
           claimName: che-data-volume
+      - name: claim-che-workspace
+        persistentVolumeClaim:
+          claimName: claim-che-workspace
